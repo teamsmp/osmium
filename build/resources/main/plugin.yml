@@ -1,0 +1,17 @@
+name: osmium
+version: '0.0.2-build2'
+main: uk.teamsmp.osmium.Osmium
+api-version: '1.21.1'
+authors: [ 'JunglTemple' ]
+description: "osmium, the orchestrator of the Team SMP"
+website: "teamsmp.pages.dev"
+
+commands:
+  osm:
+    description: "The main command to control osmium."
+    usage: "/osm <subcommand>"
+    aliases:
+      - osmium
+      - servermanager
+      - tv
+      - proxy

@@ -1,0 +1,10 @@
+server: "this-server-name"
+ptero: "ffffffff"
+
+database:
+  host: "localhost"
+  port: 3306
+  database: "yourMysqlDatabase"
+  username: "yourMysqlUsername"
+  password: "your!VerySEcur3.p4sSw0rd123@"
+  ssl: false
