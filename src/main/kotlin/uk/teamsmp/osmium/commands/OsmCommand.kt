@@ -68,16 +68,16 @@ class OsmCommand(val plugin: Osmium) : CommandExecutor, TabCompleter {
     ): List<String?>? {
         if (!args.isNullOrEmpty()) {
             if (args.size == 1) {
-                return listOf("status", "mark", "all", "set")
+                return listOf("status", "mark", "all", "set").filter { it.startsWith(args[0]) }
             } else if (args.size == 2 && args[0] == "set") {
                 val servers = Database.getConnection().executeQuery("SELECT name FROM servers")
-                var res = listOf<String>()
+                var res = mutableListOf<String>()
                 while (servers.next()) {
-                    res.plus(servers.getString("name"))
+                    res.add(servers.getString("name"))
                 }
-                return res
+                return res.filter { it.startsWith(args[1]) }
             } else if (args.size == 3 && args[0] == "set") {
-                return listOf("up", "down", "flag", "autodown")
+                return listOf("up", "down", "flag", "autodown").filter { it.startsWith(args[2]) }
             }
         } else {
             return listOf()

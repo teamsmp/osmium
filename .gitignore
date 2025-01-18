@@ -1,0 +1,39 @@
+# IntelliJ IDEA/JetBrains project files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Build output
+/build/
+out/
+
+# Gradle files
+.gradle/
+build/
+
+# Gradle wrapper binaries
+gradle-wrapper.jar
+gradle-wrapper.properties
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*.bak
+*.orig
+*.rej
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# User-specific configuration
+*.user
+
+# Kotlin-specific
+*.class
+*.kt.metadata

@@ -1,5 +1,5 @@
 name: osmium
-version: '0.0.2-build2'
+version: '0.0.2-build3'
 main: uk.teamsmp.osmium.Osmium
 api-version: '1.21.1'
 authors: [ 'JunglTemple' ]
