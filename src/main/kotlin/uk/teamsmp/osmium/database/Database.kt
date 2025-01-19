@@ -21,7 +21,7 @@ object Database {
         val url = "jdbc:mysql://$host:$port/$database$ssl"
         try {
             connection = DriverManager.getConnection(url, username, password)
-            plugin.logger.log(Level.INFO, "MySQL connection established!")
+            plugin.logger.info("MySQL connection established!")
         } catch (e: SQLException) {
             e.printStackTrace()
             plugin.logger.log(Level.SEVERE, "Could not establish MySQL connection!")

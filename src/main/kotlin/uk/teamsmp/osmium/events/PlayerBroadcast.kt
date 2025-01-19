@@ -13,12 +13,12 @@ class PlayerBroadcast(val plugin: Osmium) : Listener {
     @EventHandler
     fun onPlayerJoin(event: PlayerJoinEvent) {
         this.plugin.players = Bukkit.getOnlinePlayers().size
-        Database.getConnection().executeUpdate("UPDATE servers SET players = ${this.plugin.players} WHERE name = '${this.plugin.osmserver}'")
+        Database.getConnection().executeUpdate("UPDATE servers SET players = ? WHERE name = ?", this.plugin.players, this.plugin.osmserver)
     }
 
     @EventHandler
     fun onPlayerLeave(event: PlayerQuitEvent) {
         this.plugin.players = Bukkit.getOnlinePlayers().size
-        Database.getConnection().executeUpdate("UPDATE servers SET players = ${this.plugin.players} WHERE name = '${this.plugin.osmserver}'")
+        Database.getConnection().executeUpdate("UPDATE servers SET players = ? WHERE name = ?", this.plugin.players, this.plugin.osmserver)
     }
 }

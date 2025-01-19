@@ -1,5 +1,5 @@
 name: osmium
-version: '0.0.2-build3'
+version: '0.0.3-build4'
 main: uk.teamsmp.osmium.Osmium
 api-version: '1.21.1'
 authors: [ 'JunglTemple' ]
@@ -15,3 +15,14 @@ commands:
       - servermanager
       - tv
       - proxy
+  hub:
+    description: "Go to the Hub"
+    usage: "/hub [a|b]"
+    aliases:
+      - lobby
+  path:
+    description: "Path to any server"
+    usage: "/path <server>"
+    aliases:
+      - goto
+      - route

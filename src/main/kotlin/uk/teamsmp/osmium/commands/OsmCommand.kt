@@ -25,7 +25,7 @@ class OsmCommand(val plugin: Osmium) : CommandExecutor, TabCompleter {
 
         when (args[0]) {
             "status", "mark" -> {
-                val status = Database.getConnection().executeQuery("SELECT mark FROM servers WHERE name = '${plugin.osmserver}' LIMIT 1")
+                val status = Database.getConnection().executeQuery("SELECT mark FROM servers WHERE name = ? LIMIT 1", plugin.osmserver)
                 if (status.next()) {
                     val mark = status.getString("mark")
                     sender.sendMessage(mm.deserialize("${plugin.prefix} <gold>${plugin.osmserver}</gold> is currently marked as <yellow>${mark}</yellow>"))
@@ -48,7 +48,7 @@ class OsmCommand(val plugin: Osmium) : CommandExecutor, TabCompleter {
                 val server = args[1]
                 val mark = args[2]
 
-                Database.getConnection().executeUpdate("UPDATE servers SET mark = '${mark}' WHERE name = '${server}'")
+                Database.getConnection().executeUpdate("UPDATE servers SET mark = ? WHERE name = ?", mark, server)
 
                 sender.sendMessage(mm.deserialize("${plugin.prefix} Set mark of <gold>${server}</gold> to <yellow>${mark}</yellow>."))
             }
